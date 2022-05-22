@@ -1,7 +1,7 @@
 version: "2"
 services:
   nacos:
-    image: nacos/nacos-server:${NACOS_VERSION}
+    image: 192.168.3.201/library/nacos/nacos-server:v2.0.3
     container_name: nacos-standalone-mysql
     env_file:
       - ./env/nacos-standlone-mysql.env
@@ -17,7 +17,7 @@ services:
     restart: on-failure
   mysql:
     container_name: mysql
-    image: nacos/nacos-mysql:5.7
+    image: 192.168.3.201:80/library/nacos/nacos-mysql:5.7
     env_file:
       - ./conf/env/mysql.env
     volumes:
@@ -26,7 +26,7 @@ services:
       - "3306:3306"
   prometheus:
     container_name: prometheus
-    image: prom/prometheus:latest
+    image: 192.168.3.201:80/library/prom/prometheus:latest
     volumes:
       - ./conf/prometheus/prometheus-standalone.yaml:/etc/prometheus/prometheus.yml
     ports:
@@ -36,7 +36,7 @@ services:
     restart: on-failure
   grafana:
     container_name: grafana
-    image: grafana/grafana:latest
+    image: 192.168.3.201:80/library/grafana/grafana:latest
     ports:
       - 3000:3000
     restart: on-failure
