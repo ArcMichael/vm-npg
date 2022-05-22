@@ -1,7 +1,7 @@
 version: "2"
 services:
   nacos:
-    image: 192.168.3.201/library/nacos/nacos-server:v2.0.3
+    image: 192.168.3.201:80/library/nacos/nacos-server:v2.0.3
     container_name: nacos-standalone-mysql
     env_file:
       - ./conf/env/nacos-standlone-mysql.env
