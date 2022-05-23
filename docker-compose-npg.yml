@@ -24,6 +24,15 @@ services:
       - /mnt/mysql:/var/lib/mysql
     ports:
       - "3306:3306"
+  mysql-exporter:
+    image: 192.168.3.201:80/library/prom/mysqld-exporter
+    container_name: nacos-mysql
+    hostname: mysql-exporter
+    restart: always
+    ports:
+        - "9104:9104"
+    environment:
+      DATA_SOURCE_NAME: "root:root@(192.168.3.203:3306)/"
   prometheus:
     container_name: prometheus
     image: 192.168.3.201:80/library/prom/prometheus:latest
