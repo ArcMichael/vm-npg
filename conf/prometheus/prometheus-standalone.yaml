@@ -37,3 +37,8 @@ scrape_configs:
     metrics_path: '/metrics'
     static_configs:
       - targets: ['nacos-mysql.in.gen10.mly0110.org.cn:9104']
+
+  - job_name: 'node'
+    scrape_interval: 8s
+    static_configs:
+      - targets: ["node-203.in.gen10.mly0110.org.cn:9100']
