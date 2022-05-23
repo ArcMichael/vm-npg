@@ -24,20 +24,20 @@ services:
       - /mnt/mysql:/var/lib/mysql
     ports:
       - "3306:3306"
-  # prometheus:
-  #   container_name: prometheus
-  #   image: 192.168.3.201:80/library/prom/prometheus:latest
-  #   volumes:
-  #     - ./conf/prometheus/prometheus-standalone.yaml:/etc/prometheus/prometheus.yml
-  #   ports:
-  #     - "9090:9090"
-  #   depends_on:
-  #     - nacos
-  #   restart: on-failure
-  # grafana:
-  #   container_name: grafana
-  #   image: 192.168.3.201:80/library/grafana/grafana:latest
-  #   ports:
-  #     - 3000:3000
-  #   restart: on-failure
+  prometheus:
+    container_name: prometheus
+    image: 192.168.3.201:80/library/prom/prometheus:latest
+    volumes:
+      - ./conf/prometheus/prometheus-standalone.yaml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    depends_on:
+      - nacos
+    restart: on-failure
+  grafana:
+    container_name: grafana
+    image: 192.168.3.201:80/library/grafana/grafana:latest
+    ports:
+      - 3000:3000
+    restart: on-failure
 
