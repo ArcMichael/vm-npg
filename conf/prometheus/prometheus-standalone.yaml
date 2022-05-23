@@ -41,4 +41,4 @@ scrape_configs:
   - job_name: 'node'
     scrape_interval: 8s
     static_configs:
-      - targets: ['node-203.in.gen10.mly0110.org.cn:9100','node-202.in.gen10.mly0110.org.cn:9100']
+      - targets: ['node-203.in.gen10.mly0110.org.cn:9100','node-202.in.gen10.mly0110.org.cn:9100','node-201.in.gen10.mly0110.org.cn:9100']
