@@ -33,10 +33,16 @@ scrape_configs:
     static_configs:
       - targets: ["nacos.in.gen10.mly0110.org.cn:8848"]
 
-  - job_name: "nacos-mysql"
+  - job_name: "mysql"
     metrics_path: "/metrics"
     static_configs:
       - targets: ["nacos-mysql.in.gen10.mly0110.org.cn:9104"]
+
+  
+  - job_name: "elasticsearch"
+    metrics_path: "/metrics"
+    static_configs:
+      - targets: ["kibana-es.in.gen10.mly0110.org.cn:9104"]
 
   - job_name: "node"
     scrape_interval: 8s
