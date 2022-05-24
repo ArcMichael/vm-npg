@@ -42,7 +42,7 @@ scrape_configs:
   - job_name: "elasticsearch"
     metrics_path: "/metrics"
     static_configs:
-      - targets: ["kibana-es.in.gen10.mly0110.org.cn:9104"]
+      - targets: ["kibana-es.in.gen10.mly0110.org.cn:9114"]
 
   - job_name: "node"
     scrape_interval: 8s
