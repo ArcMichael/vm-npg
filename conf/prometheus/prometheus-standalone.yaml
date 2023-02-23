@@ -26,40 +26,23 @@ scrape_configs:
     # scheme defaults to 'http'.
 
     static_configs:
-      - targets: ["promethus.in.gen10.mly0110.org.cn:9090"]
+      - targets: ["prometheus.operation.in.gen10.mly0110.org.cn:9090"]
 
   - job_name: "nacos"
     metrics_path: "/nacos/actuator/prometheus"
     static_configs:
-      - targets: ["nacos.in.gen10.mly0110.org.cn:8848"]
+      - targets: ["nacos.operation.in.gen10.mly0110.org.cn:8848"]
 
   - job_name: "mysql"
     metrics_path: "/metrics"
     static_configs:
-      - targets: ["nacos-mysql.in.gen10.mly0110.org.cn:9104"]
-
-  
-  - job_name: "elasticsearch"
-    metrics_path: "/metrics"
-    static_configs:
-      - targets: ["kibana-es.in.gen10.mly0110.org.cn:9114"]
+      - targets: ["nacos-mysql.operation.in.gen10.mly0110.org.cn:9104"]
 
   - job_name: "node"
     scrape_interval: 8s
     static_configs:
       - targets:
           [
-            "node-210.in.gen10.mly0110.org.cn:9100",
-            "node-206.in.gen10.mly0110.org.cn:9100",
-            "node-205.in.gen10.mly0110.org.cn:9100",
-            "node-204.in.gen10.mly0110.org.cn:9100",
-            "node-203.in.gen10.mly0110.org.cn:9100",
-            "node-202.in.gen10.mly0110.org.cn:9100",
-            "node-201.in.gen10.mly0110.org.cn:9100",
-            "node-200.in.gen10.mly0110.org.cn:9100",
+            "node-231.operation.in.gen10.mly0110.org.cn:9100"
           ]
           
-  - job_name: "kong"
-    metrics_path: "/metrics"
-    static_configs:
-      - targets: ["kong.in.gen10.mly0110.org.cn:8001"]

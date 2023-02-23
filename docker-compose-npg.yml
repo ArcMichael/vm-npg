@@ -1,7 +1,7 @@
 version: "2"
 services:
   nacos:
-    image: 192.168.3.201:80/library/nacos/nacos-server:v2.0.3
+    image: 192.168.3.200:80/library/nacos/nacos-server:v2.0.3
     container_name: nacos-standalone-mysql
     env_file:
       - ./conf/env/nacos-standlone-mysql.env
@@ -17,7 +17,7 @@ services:
     restart: on-failure
   mysql:
     container_name: mysql
-    image: 192.168.3.201:80/library/nacos/nacos-mysql:5.7
+    image: 192.168.3.200:80/library/nacos/nacos-mysql:5.7
     env_file:
       - ./conf/env/mysql.env
     volumes:
@@ -25,19 +25,19 @@ services:
     ports:
       - "3306:3306"
   mysql-exporter:
-    image: 192.168.3.201:80/library/prom/mysqld-exporter
+    image: 192.168.3.200:80/library/prom/mysqld-exporter
     container_name: nacos-mysql
     hostname: mysql-exporter
     restart: always
     ports:
         - "9104:9104"
     environment:
-      DATA_SOURCE_NAME: "root:root@(192.168.3.203:3306)/"
+      DATA_SOURCE_NAME: "root:root@(192.168.3.231:3306)/"
     depends_on:
       - mysql
   prometheus:
     container_name: prometheus
-    image: 192.168.3.201:80/library/prom/prometheus:latest
+    image: 192.168.3.200:80/library/prom/prometheus:latest
     volumes:
       - ./conf/prometheus/prometheus-standalone.yaml:/etc/prometheus/prometheus.yml
     ports:
@@ -47,12 +47,12 @@ services:
     restart: on-failure
   grafana:
     container_name: grafana
-    image: 192.168.3.201:80/library/grafana/grafana:latest
+    image: 192.168.3.200:80/library/grafana/grafana:latest
     ports:
       - 3000:3000
     restart: on-failure
   node-exporter:
-    image: 192.168.3.201:80/library/quay.io/prometheus/node-exporter
+    image: 192.168.3.200:80/library/quay.io/prometheus/node-exporter
     container_name: node-exporter
     restart: always
     ports:
