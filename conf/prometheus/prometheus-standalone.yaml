@@ -26,7 +26,7 @@ scrape_configs:
     # scheme defaults to 'http'.
 
     static_configs:
-      - targets: ["prometheus.operation.in.mly0110.org.cn:9090"]
+      - targets: ["prometheus.operation.in.mly0110.org.cn:9999"]
 
   - job_name: "nacos"
     metrics_path: "/nacos/actuator/prometheus"
@@ -45,4 +45,5 @@ scrape_configs:
           [
             "node-231.operation.in.mly0110.org.cn:9100"
           ]
+          
           
