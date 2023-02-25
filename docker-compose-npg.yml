@@ -41,7 +41,7 @@ services:
     volumes:
       - ./conf/prometheus/prometheus-standalone.yaml:/etc/prometheus/prometheus.yml
     ports:
-      - "9090:9090"
+      - "9999:9090"
     depends_on:
       - nacos
     restart: on-failure
