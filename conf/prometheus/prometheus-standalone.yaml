@@ -50,22 +50,22 @@ scrape_configs:
   - job_name: 'harbor-exporter'   #从Harbor exporter组件中获取度量
       scrape_interval: 20s
       static_configs:
-      - targets: ['192.168.2.200:9999/metrics']
+      - targets: ['harbor.dependency.in.mly0110.org.cn:9999/metrics']
   - job_name: 'harbor-core'
     scrape_interval: 20s
     params:
       comp: ['core']    #从Harbor core组件中获取度量
     static_configs:
-      - targets: ['192.168.2.200:9999/metrics']
+      - targets: ['harbor.dependency.in.mly0110.org.cn:9999/metrics']
   - job_name: 'harbor-registry'
     scrape_interval: 20s
     params:
       comp: ['registry']   #从Harbor registry组件中获取度量
     static_configs:
-      - targets: ['192.168.2.200:9999/metrics']
+      - targets: ['harbor.dependency.in.mly0110.org.cn:9999/metrics']
   - job_name: 'harbor-jobservice'
     scrape_interval: 20s
     params:
       comp: ['jobservice']  # 从Harbor jobservice组件中获取度量
     static_configs:
-      - targets: ['192.168.2.200:9999/metrics']
+      - targets: ['harbor.dependency.in.mly0110.org.cn:9999/metrics']
