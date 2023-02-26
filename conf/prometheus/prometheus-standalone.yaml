@@ -28,6 +28,7 @@ scrape_configs:
     scrape_interval: 8s
     static_configs:
       - targets: [
+            "node-200.operation.in.mly0110.org.cn:9100", 
             "node-231.operation.in.mly0110.org.cn:9100", 
             "node-232.operation.in.mly0110.org.cn:9100"
           ]
