@@ -31,7 +31,6 @@ scrape_configs:
             "node-200.operation.in.mly0110.org.cn:9100", 
             "node-210.operation.in.mly0110.org.cn:9100", 
             "node-213.operation.in.mly0110.org.cn:9100", 
-            "node-230.operation.in.mly0110.org.cn:9100", 
             "node-231.operation.in.mly0110.org.cn:9100", 
             "node-232.operation.in.mly0110.org.cn:9100",
             "node-233.operation.in.mly0110.org.cn:9100",
