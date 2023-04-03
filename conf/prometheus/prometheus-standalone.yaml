@@ -28,13 +28,14 @@ scrape_configs:
     scrape_interval: 8s
     static_configs:
       - targets: [
-            "node-200.operation.in.mly0110.org.cn:9100", 
-            "node-210.operation.in.mly0110.org.cn:9100", 
-            "node-213.operation.in.mly0110.org.cn:9100", 
-            "node-231.operation.in.mly0110.org.cn:9100", 
-            "node-232.operation.in.mly0110.org.cn:9100",
-            "node-233.operation.in.mly0110.org.cn:9100",
-            "node-234.operation.in.mly0110.org.cn:9100"
+            "node-200.exporter.in.mly0110.org.cn",
+            "node-210.exporter.in.mly0110.org.cn",
+            "node-211.exporter.in.mly0110.org.cn",
+            "node-213.exporter.in.mly0110.org.cn",
+            "node-231.exporter.in.mly0110.org.cn",
+            "node-232.exporter.in.mly0110.org.cn",
+            "node-233.exporter.in.mly0110.org.cn",
+            "node-234.exporter.in.mly0110.org.cn"
           ]
   - job_name: harbor-exporter
     metrics_path: /metrics
@@ -65,3 +66,10 @@ scrape_configs:
       - targets: ["harbor.dependency.in.mly0110.org.cn:9999"]
     # scheme defaults to 'http'.# - "first_rules.yml"
 # - "second_rules.yml"          # - alertmanager:9093  # scrape_timeout is set to the global default (10s).
+  - job_name: kong
+    metrics_path: /metrics
+    params:
+      comp: ["registry"]
+    scrape_interval: 20s
+    static_configs:
+      - targets: ["kong.service.in.mly0110.org.cn:8001"]
