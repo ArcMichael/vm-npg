@@ -20,13 +20,14 @@ scrape_configs:
     metrics_path: /nacos/actuator/prometheus
     static_configs:
       - targets: ["nacos.operation.in.mly0110.org.cn:8848"]
+  - job_name: nacos-mysql
+    metrics_path: /metrics
+    static_configs:
+      - targets: ["nacos-mysql.operation.in.mly0110.org.cn:9104"]
   - job_name: mysql
     metrics_path: /metrics
     static_configs:
-      - targets: [
-          "nacos-mysql.operation.in.mly0110.org.cn:9104"
-          “mysql.database.in.mly0110.org.cn:9104"
-        ]
+      - targets: ["mysql.database.in.mly0110.org.cn:9104"]
   - job_name: node
     scrape_interval: 8s
     static_configs:
@@ -37,7 +38,6 @@ scrape_configs:
             "node-211.exporter.in.mly0110.org.cn:9100",
             "node-212.exporter.in.mly0110.org.cn:9100",
             "node-213.exporter.in.mly0110.org.cn:9100",
-            "node-214.exporter.in.mly0110.org.cn:9100",
             "node-231.exporter.in.mly0110.org.cn:9100",
             "node-232.exporter.in.mly0110.org.cn:9100",
             "node-233.exporter.in.mly0110.org.cn:9100",
